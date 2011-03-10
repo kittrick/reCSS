@@ -1,0 +1,152 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #444;
+	font-size: 120%;
+	text-shadow: -1px -1px 1px white;
+	line-height: 1.4em;
+}
+
+#panel {
+	background: #fcfcfc;
+	padding: 0 20px;
+	width: 400px;
+	height: 100%;
+	float: left;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-right: 1px solid #c0c0c0;
+}
+	fieldset {
+		margin: 2.5em 0 20px;
+	}
+	span.pink {
+		color: #FF5599;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	
+	label {
+		float: left;
+		clear: left;
+		width: 190px;
+	}
+
+	input, textarea, button {
+		outline: none;
+		float: left;
+		clear: right;
+		font-family: inherit;
+		line-height: 1.4em;
+		font-size: 80%;
+		width: 190px;
+		margin-bottom: 20px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		color: #444;
+		-moz-box-shadow: inset 0 0 1px 1px #c0c0c0;
+		-webkit-box-shadow: inset 0 0 1px 1px #c0c0c0;
+		box-shadow: inset 0 0 1px 1px #c0c0c0;
+		padding-left: .5em;
+		border: none;
+	}
+	input[type=file] {
+		padding: .5em;
+	}
+	#submit {
+		background: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0, rgb(255,255,255)),
+			color-stop(0.5, rgb(232,232,232)),
+			color-stop(1, rgb(255,255,255))
+		);
+		background: -moz-linear-gradient(
+			center bottom,
+			rgb(255,255,255) 0%,
+			rgb(232,232,232) 50%,
+			rgb(255,255,255) 100%
+		);
+	}
+	textarea {
+		line-height: 1em;
+		font-family: monospace;
+		max-width: 96%;
+		width: 96%;
+		height: 240px;
+	}
+	
+	hr {
+		display: block;
+		border: none;
+		color: none;
+		background: none;
+		border-top: 1px solid #c0c0c0;
+		border-bottom: 1px solid #fff;
+		clear: both;
+		width: 100%;
+		padding: 0 20px;
+		margin-left: -20px;
+	}
+
+#result {
+	height: 100%;
+	overflow: hidden;
+	background: #fff;
+	margin-bottom: -48px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+	#status {
+		clear: both;
+	}
+		div.warning {
+			position: relative;
+			background: #eee;
+			padding: 5px 0 10px;
+			-moz-box-shadow: 0 0 1em #444;
+			-webkit-box-shadow: 0 0 1em #444;
+			box-shadow: 0 0 1em #444;
+			text-indent: 10px;
+			background: #eee;
+			background: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0, rgb(255,255,255)),
+				color-stop(0.5, rgb(232,232,232)),
+				color-stop(1, rgb(255,255,255))
+			);
+			background: -moz-linear-gradient(
+				center bottom,
+				rgb(255,255,255) 0%,
+				rgb(232,232,232) 50%,
+				rgb(255,255,255) 100%
+			);
+		}
+		div.warning:after {
+			position: absolute;
+			display: block;
+			content: '\0020';
+			background: url(images/stripes.gif) repeat top left;
+			-moz-box-shadow: inset 0 -2px 2px rgba(10,10,10,.4);
+			-webkit-box-shadow: inset 0 -2px 2px rgba(10,10,10,.4);
+			box-shadow: inset 0 -2px 2px rgba(10,10,10,.4);
+			width: 100%;
+			height: 10px;
+			margin-top: 9px;
+			border-top: 1px solid #aaa;
+		}
+		strong.warning {
+			font-weight: bold;
+		}
+		
+	#codearea {
+		overflow: auto;
+	}

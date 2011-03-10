@@ -1,32 +1,54 @@
-<!DOCTYPE html>
-<html>
+<?php
+/* Error Reporting */
+	ini_set("display_errors", 1);
+	error_reporting(E_ALL);
+	
+/* Init System */
+	require_once('system.php');
+?>
+<!doctype html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>reCSS</title>
-		<meta description="Convert XML and HTML to CSS" />
-		<meta keywords="reCSS, xml, html, css, converter, convert, conversion" />
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script src="scripts.js"></script>
+		<meta charset="utf-8">
+		<title>ReCSS</title>
+ 		<link rel="stylesheet" href="css/boilerplate.css" />
+ 		<link rel="stylesheet" href="css/styles.css" />
+ 		<link rel="stylesheet" href="css/SyntaxHighlighterModified.css" />
 	</head>
 	<body>
-		<fieldset>
-			<legend>reCSS<span>beta</span></legend>
-			<p>XML to CSS converter</p>
-			<p>
-				reCSS takes an XML document and breaks it into a
-				well formatted CSS document with classes, ids and
-				tabbed inheritance. Hit submit, you'll see what I'm
-				talkin' about.
-			</p>
-			<p id="status"></p>
-			<hr />
-			<form id="form" action="#" method="get">
-				<label for="url">Enter your URL here:</label>
-				<input type="text" name="url" id="url" />
-				<label id="loading" for="submit">&nbsp;</label>
-				<input type="submit" name="submit" id="submit" />
-			</form>
-		</fieldset>
+		<div id="panel">
+			<fieldset class="clearfix">
+				<h1>ReCSS<span class="pink">beta</span></h1>
+				<p>ReCSS takes raw CSS and prettifies it to your specifications. Currently a work in progress...</p>
+				<form id="form" action="#" method="post">
+					<hr />
+					<h2>Preferences:</h2>
+					<label for="comments">Strip Comments</label>
+					<input type="checkbox" name="comments" id="comments" />
+					<label for="minify">Minify</label>
+					<input type="checkbox" name="minify" id="minify" />
+					<hr />
+					<h2>Add Your CSS:</h2>
+					<label for="css-text">Paste Your Code Here: </label><textarea name="text" id="css-text"></textarea>
+					<label for="sumbit" id="doit">Do it!</label>
+					<input type="submit" name="submit" value="submit" id="submit"/>
+				</form>
+			</fieldset>
+		</div>
+		<div id="result">
+			<div id="status">
+				<?php echo $status; ?>
+			</div>
+			<div id="codearea">
+				<pre name="code" class="javascript" id="code"><?php echo $response; ?></pre>
+			</div>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
+		<script src="js/scrollto.jquery.js"></script>
+		<script src="js/tabby.jquery.js"></script>
+		<script src="js/shCoreStaticMaker.js"></script>
+		<script src="js/shBrushCss.js"></script>
+		<script src="js/scripts.js"></script>
 	</body>
 </html>
